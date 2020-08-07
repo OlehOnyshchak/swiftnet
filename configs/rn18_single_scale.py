@@ -19,7 +19,7 @@ root = Path.home() / Path('datasets/Cityscapes')
 path = os.path.abspath(__file__)
 dir_path = os.path.dirname(path)
 
-evaluating = False
+evaluating = True
 random_crop_size = 768
 
 scale = 1
