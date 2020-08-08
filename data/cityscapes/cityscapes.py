@@ -45,7 +45,7 @@ class Cityscapes(Dataset):
         self.subset = subset
         self.has_labels = subset != 'test'
         self.open_depth = open_depth
-        self.images = list(sorted(self.images_dir.glob('*/*.ppm')))
+        self.images = list(sorted(self.images_dir.glob('*/*.png'))) #ppm
         if self.has_labels:
             self.labels = list(sorted(self.labels_dir.glob('*/*.png')))
         self.transforms = transforms
