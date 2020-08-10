@@ -52,6 +52,8 @@ class ColorizeLabels:
 
     def _trans(self, lab):
         R, G, B = [np.zeros_like(lab) for _ in range(3)]
+        print("lab", lab)
+        print("np.unique(lab)", np.unique(lab))
         for l in np.unique(lab):
             mask = lab == l
             R[mask] = self.color_info[l][0]
