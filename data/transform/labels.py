@@ -78,9 +78,10 @@ class ColorizeLabels:
         print("np.unique(lab)", np.unique(lab))
         for l in hardcoded_map[np.unique(lab)]:
             mask = lab == l
-            R[mask] = self.color_info[l][0]
-            G[mask] = self.color_info[l][1]
-            B[mask] = self.color_info[l][2]
+            idx = hardcoded_map[l]
+            R[mask] = self.color_info[idx][0]
+            G[mask] = self.color_info[idx][1]
+            B[mask] = self.color_info[idx][2]
         return np.stack((R, G, B), axis=-1).astype(np.uint8)
 
     def __call__(self, example):
