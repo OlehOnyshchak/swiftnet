@@ -108,6 +108,7 @@ if evaluating:
     for d in ['', 'val', 'train', 'training']:
         os.makedirs(store_dir + d, exist_ok=True)
     to_color = ColorizeLabels(color_info)
-    to_image = Compose([DenormalizeTh(scale, mean, std), Numpy(), to_color])
+    to_image = Compose([Numpy(), to_color])
+#     to_image = Compose([DenormalizeTh(scale, mean, std), Numpy(), to_color])
 #     eval_observers = []
     eval_observers = [StorePreds(store_dir, to_image, to_color)]
