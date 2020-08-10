@@ -78,7 +78,7 @@ class ColorizeLabels:
         print("np.unique(lab)", np.unique(lab))
         for l in np.unique(lab):
             mask = lab == l
-            idx = hardcoded_map[l]
+            idx = l # hardcoded_map[l]
             R[mask] = self.color_info[idx][0]
             G[mask] = self.color_info[idx][1]
             B[mask] = self.color_info[idx][2]
